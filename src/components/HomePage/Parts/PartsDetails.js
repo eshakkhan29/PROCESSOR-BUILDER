@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PartsDetails = ({ parts }) => {
-    const { name, img, description, minimumOrder, quantity, price } = parts;
+    const {_id, name, img, description, minimumOrder, quantity, price } = parts;
+    const navigate = useNavigate();
     return (
         <div className='col-lg-4 col-12'>
-            <div className='card'>
+            <div className='card border-bottom-0'>
                 <img src={img} alt="" />
                 <div className="card-body">
                     <h4 className='card-title'>{name}</h4>
@@ -15,7 +17,7 @@ const PartsDetails = ({ parts }) => {
                     <p>minimum order: <span>{minimumOrder}</span></p>
                     </div>
                 </div>
-                <button className='btn btn-success'>Order Now</button>
+                <button onClick={()=>navigate(`/purchase/${_id}`)} className='btn btn-success'>Order Now</button>
             </div>
         </div>
     );
