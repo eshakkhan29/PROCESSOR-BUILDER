@@ -8,7 +8,7 @@ const Review = ({ review }) => {
                 <div className="card-body">
                     <p className='text-white'>{body}</p>
                     <p>Rating <b className='text-warning'>{rating} Starts</b></p>
-                    <h className='card-title'>{name}</h>
+                    <h4 className='card-title'>{name}</h4>
                 </div>
             </div>
         </div>

@@ -1,0 +1,52 @@
+.google-button{
+    background: #8adeff;
+    color: white;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+.google-button:hover{
+    background: #1bbeff;
+}
+
+
+.from-container {
+    width: 30%;
+}
+
+.other-link {
+    text-decoration: none;
+    color: #008ec6;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.or {
+    color: #b9b9b9;
+    position: relative;
+}
+
+.or::after {
+    content: '';
+    width: 45%;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.or::before {
+    content: '';
+    width: 45%;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+@media only screen and (max-width:500px) {
+    .from-container {
+        width: 80%;
+    }
+}
