@@ -19,7 +19,10 @@ const Header = () => {
                         {!user?.uid ?
                             <Nav.Link as={Link} to="/login">login</Nav.Link>
                             :
-                            <button onClick={() => signOut(auth)} className='btn btn-danger'>Log out</button>
+                            <>
+                                <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                <button onClick={() => signOut(auth)} className='btn btn-danger'>Log out</button>
+                            </>
                         }
                     </Nav>
                 </Container>

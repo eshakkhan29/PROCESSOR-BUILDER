@@ -81,7 +81,9 @@ const Purchase = () => {
                         </>
                     }
                     <div>
-                        <h3>{name}</h3>
+                        <h3 className='text-primary'>{name}</h3>
+                        <p>per unit price: <b>BDT {price}</b>
+                        </p>
                         <p>in Stoke: <b>{quantity}</b></p>
                         <p>Minimum order Quantity: <b>{minimumOrder}</b></p>
                     </div>

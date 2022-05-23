@@ -8,11 +8,11 @@
         "price": "3000"
     },
     {
-        "name": "Intel Core i3-2120 2nd Gen Processor (Tray)",
-        "img": "https://www.startech.com.bd/image/cache/catalog/processor/Intel/i3-10100/i3-10100-500x500.jpg",
-        "description": "The Intel Core i3-2120 2nd Gen Processor has a Processor Base Frequency of 3.30 GHz and a 3 MB Intel Smart Cache. It has 2 cores and 4 threads. It features 2 memory channels that support DDR3 1066/1333 up to 32 GB.",
-        "minimumOrder": "50",
-        "quantity": "200",
+        "name": "Intel Pentium Gold G6400 10th gen Coffee Lake Processor",
+        "img": "https://www.startech.com.bd/image/cache/catalog/processor/Intel/g6400/g6400-500x500.jpg",
+        "description": "This processor comes with a new breed that has an integrated GPU, so a separate graphics card is not required for its functionality. This new 10th gen Comet Lake microarchitecture is manufactured with the 14nm process that comes with two cores and HyperThreading.",
+        "minimumOrder": "70",
+        "quantity": "450",
         "price": "3000"
     },
     {
