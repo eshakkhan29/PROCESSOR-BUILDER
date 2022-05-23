@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import PartsDetails from './PartsDetails';
 
 const Parts = () => {
-    const [parts, setParst] = useState([]);
+    const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch('parts.json')
+        fetch('http://localhost:5000/parts')
             .then(res => res.json())
-            .then(data => setParst(data))
+            .then(data => setParts(data))
     }, [])
     return (
         <section className='my-5 container'>
