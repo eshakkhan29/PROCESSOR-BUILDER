@@ -8,7 +8,6 @@ const MyOrders = () => {
     const email = user?.email;
     const [orders, setOrders] = useState([]);
     const [refetch, setRefetch] = useState(false);
-    console.log(orders);
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${email}`)
             .then(res => res.json())

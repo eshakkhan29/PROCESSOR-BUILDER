@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useProfileInfo from '../hook/useProfileInfo';
 
 const Purchase = () => {
     const [user] = useAuthState(auth);
@@ -13,6 +14,8 @@ const Purchase = () => {
     const { id } = useParams();
     const [purchaseProduct, setPurchaseProduct] = useState([]);
     const { displayName, email } = user;
+    const [userInfo] = useProfileInfo(email);
+    const { location, phone, fblink, linkedin } = userInfo;
     const { name, minimumOrder, quantity, price } = purchaseProduct;
 
 
@@ -44,11 +47,9 @@ const Purchase = () => {
     const handelSubmit = event => {
         event.preventDefault();
         const quantity = event.target.quantity.value;
-        const parts = event.target.name.value;
         const price = event.target.price.value;
-        const address = event.target.address.value;
-        const mobile = event.target.number.value;
-        const orderData = { displayName, email, quantity, parts, price, address, mobile, };
+        const orderData = { displayName, email, quantity, name, price, location, phone, };
+        console.log(orderData);
 
         fetch("http://localhost:5000/orders", {
             method: "POST",
@@ -64,7 +65,7 @@ const Purchase = () => {
                 }
                 console.log(data)
             })
-            event.target.reset();
+        event.target.reset();
 
     }
 
@@ -73,15 +74,21 @@ const Purchase = () => {
         <section className='container my-5'>
             <div className='d-flex justify-content-between'>
                 <div className='w-100'>
-                    <button onClick={() => setShow(true)} className='btn btn-primary my-3'>Show Details</button>
+                    <button onClick={() => setShow(true)} className='btn btn-primary my-3'>Show Client Details</button>
                     {show &&
                         <>
-                            <h4>name: {displayName}</h4>
-                            <h3>Email: {email}</h3>
+                            <h2 className='text-success'>Client Information</h2>
+                            <p>{displayName}</p>
+                            <p>Email: {email}</p>
+                            <p>Location: {location}</p>
+                            <p>Phone: {phone}</p>
+                            <p>Facebook Link: {fblink}</p>
+                            <p>linkedin Link: {linkedin}</p>
                         </>
                     }
                     <div>
-                        <h3 className='text-primary'>{name}</h3>
+                        <h2 className='text-success'>Parts Information</h2>
+                        <h4 className='text-primary'>{name}</h4>
                         <p>per unit price: <b>BDT {price}</b>
                         </p>
                         <p>in Stoke: <b>{quantity}</b></p>
@@ -99,26 +106,12 @@ const Purchase = () => {
                             }
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Parts name</Form.Label>
-                            <Form.Control readOnly name='name' value={name} type="text" />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
                             <Form.Label>Total price</Form.Label>
                             <Form.Control readOnly name='price' value={totalPrice} type="text" />
                         </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control required name='address' type="text" placeholder="your Address" />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3">
-                            <Form.Label>Phone</Form.Label>
-                            <Form.Control required name='number' type="number" placeholder="Phone number" />
-                        </Form.Group>
-
-                        <Button variant="primary" value='Order' type="submit">
-                            SET ORDER
+                        <Button disabled={error} variant="primary" value='Order' type="submit">
+                            CONFIRM ORDER
                         </Button>
                     </Form>
                 </div>

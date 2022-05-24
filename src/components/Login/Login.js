@@ -5,6 +5,8 @@ import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
+import useUserToken from '../hook/useUserToken';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, loading, error] = useSignInWithGoogle(auth);
@@ -18,6 +20,8 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
 
+    const [token] = useUserToken(googleUser || signInUser);
+
     const handelEmail = event => {
         setEmail(event.target.value);
     }
@@ -26,9 +30,9 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    // if (loading || signInLoading) {
-    //     return <Loading></Loading>
-    // }
+    if (loading || signInLoading) {
+        return <Loading></Loading>
+    }
 
     if (sending) {
         toast.success('Password reset email send')
@@ -38,7 +42,7 @@ const Login = () => {
         toast.error(`${signInError ? signInError.message : ''} ${reseterror ? reseterror.message : ''} ${error ? error.message : ''}`);
     }
 
-    if (googleUser || signInUser) {
+    if (token) {
         navigate(from, { replace: true })
     }
 

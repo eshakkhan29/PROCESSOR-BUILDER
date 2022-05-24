@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const Order = ({ order, setRefetch, refetch }) => {
-    const { _id, address, displayName, email, mobile, parts, price, quantity } = order;
+    const { _id, address: location, displayName, email, phone, name, price, quantity } = order;
 
     const handelCancel = () => {
         fetch(`http://localhost:5000/orders/${_id}`, {
@@ -21,7 +21,7 @@ const Order = ({ order, setRefetch, refetch }) => {
         <div className='col-12 shadow rounded-3 p-3'>
             <div className='d-flex justify-content-between align-items-center'>
                 <div>
-                    <h3 className='text-primary'>{parts}</h3>
+                    <h3 className='text-primary'>{name}</h3>
                     <div className='d-flex'>
                         <p className='me-4'>Quantity: <b>{quantity}</b></p>
                         <p>Price: <b>BDT {price}</b></p>
@@ -30,11 +30,11 @@ const Order = ({ order, setRefetch, refetch }) => {
                     <div className='d-flex justify-content-between'>
                         <div>
                             <p>Client Email: <b>{email}</b></p>
-                            <p>Shipping Address: <b>{address}</b></p>
+                            <p>Shipping Address: <b>{location}</b></p>
                         </div>
                         <div>
                             <p>Client name: <b>{displayName}</b></p>
-                            <p>Client Phone: <b>{mobile}</b></p>
+                            <p>Client Phone: <b>{phone}</b></p>
                         </div>
                     </div>
                 </div>

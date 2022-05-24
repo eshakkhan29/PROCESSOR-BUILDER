@@ -13,6 +13,9 @@ import Dashboard from './components/Dashboard/Dashboard';
 import MyOrders from './components/Dashboard/MyOrders';
 import AddAReview from './components/Dashboard/AddAReview';
 import MyProfile from './components/Dashboard/MyProfile';
+import ManageAllOrders from './components/Dashboard/ManageAllOrders';
+import AddProduct from './components/Dashboard/AddProduct';
+import ManageProduct from './components/Dashboard/ManageProduct';
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/addreview' element={<AddAReview></AddAReview>}></Route>
           <Route path='/dashboard/profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='/dashboard/manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='/dashboard/addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='/dashboard/manageproduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
       </Routes>
       <Footer></Footer>

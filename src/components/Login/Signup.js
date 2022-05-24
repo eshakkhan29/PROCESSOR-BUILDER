@@ -4,6 +4,8 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useUserToken from '../hook/useUserToken';
+import Loading from '../Shared/Loading/Loading';
 
 const Signup = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -14,6 +16,7 @@ const Signup = () => {
         createError,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useUserToken(googleUser || createUser);
 
     const navigate = useNavigate();
     const [error, setError] = useState('');
@@ -23,25 +26,24 @@ const Signup = () => {
         setCheck(event.target.checked);
     }
 
-    // if (createLoading || updating || googleLoading) {
-    //     return <Loading></Loading>
-    // }
+    if (createLoading || updating || googleLoading) {
+        return <Loading></Loading>
+    }
 
     if (createError || updateError || googleError) {
         toast.error(`${createError ? createError.message : ''} ${updateError ? updateError?.message : ''} ${googleError ? googleError?.message : ''}`);
     }
-    if (googleUser || createUser) {
+    if (token) {
         navigate('/home')
     }
 
     const handelSubmit = async event => {
+        event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
 
-        console.log(name, email, password, confirmPassword);
-        event.preventDefault();
         if (password !== confirmPassword) {
             return setError('Password not match');
         }
