@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Order = ({ order, setRefetch, refetch }) => {
-    const { _id, address: location, displayName, email, phone, name, price, quantity } = order;
+    const { _id, location, displayName, email, phone, name, price, quantity } = order;
+    const navigate = useNavigate();
 
     const handelCancel = () => {
         fetch(`http://localhost:5000/orders/${_id}`, {
@@ -18,7 +20,7 @@ const Order = ({ order, setRefetch, refetch }) => {
     }
 
     return (
-        <div className='col-12 shadow rounded-3 p-3'>
+        <div className='col-12 shadow-sm rounded-3 p-3'>
             <div className='d-flex justify-content-between align-items-center'>
                 <div>
                     <h3 className='text-primary'>{name}</h3>
@@ -40,7 +42,7 @@ const Order = ({ order, setRefetch, refetch }) => {
                 </div>
                 <div>
                     <button onClick={handelCancel} className='btn btn-danger me-3'>cancel Order</button>
-                    <button className='btn btn-success'>pay</button>
+                    <button onClick={() => navigate(`/dashboard/payment/${_id}`)} className='btn btn-success'>pay</button>
                 </div>
             </div>
         </div>

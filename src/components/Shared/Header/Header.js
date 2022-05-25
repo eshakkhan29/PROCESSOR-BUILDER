@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar bg="primary" variant="dark">
+            <Navbar expand="lg" bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to='/'>Processor Builder</Navbar.Brand>
                     <Nav className="ms-auto">

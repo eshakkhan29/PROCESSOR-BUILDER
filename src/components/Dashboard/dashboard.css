@@ -1,0 +1,41 @@
+.dashboard-navigation {
+    background: #ededed;
+    border-radius: 10px;
+}
+
+.dashboard-navigation p a {
+    text-decoration: none;
+    padding: 10px;
+    color: #059a00;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+.dashboard-navigation p a:hover {
+    color: #0012db;
+}
+
+.dashboard-content {
+    width: 75%;
+}
+
+.shipping {
+    width: 50%;
+}
+
+.payment-div {
+    width: 50%;
+}
+
+@media (max-width: 565px) {
+    .dashboard-content {
+        width: 100%;
+    }
+
+    .shipping {
+        width: 100%;
+    }
+    .payment-div {
+        width: 100%;
+    }
+}
