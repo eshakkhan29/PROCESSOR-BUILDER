@@ -13,18 +13,21 @@ const Header = () => {
             <Navbar expand="lg" bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to='/'>Processor Builder</Navbar.Brand>
-                    <Nav className="ms-auto">
-                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-                        {!user?.uid ?
-                            <Nav.Link as={Link} to="/login">login</Nav.Link>
-                            :
-                            <>
-                                <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-                                <button onClick={() => signOut(auth)} className='btn btn-danger'>Log out</button>
-                            </>
-                        }
-                    </Nav>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="ms-auto">
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
+                            {!user?.uid ?
+                                <Nav.Link as={Link} to="/login">login</Nav.Link>
+                                :
+                                <>
+                                    <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                    <button onClick={() => signOut(auth)} className='btn btn-danger'>Log out</button>
+                                </>
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </div>

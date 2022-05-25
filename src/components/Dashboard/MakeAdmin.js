@@ -19,7 +19,8 @@ const MakeAdmin = () => {
                         <th>#</th>
                         <th>User Name</th>
                         <th>User Email</th>
-                        <th>Action | Role</th>
+                        <th>Action</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -20,6 +20,7 @@ const MyProfile = () => {
         const fblink = event.target.facebook.value;
         const linkedin = event.target.linkedin.value;
         const userData = { email, education, location, phone, fblink, linkedin }
+        
         fetch("http://localhost:5000/users", {
             method: "PUT",
             headers: {
