@@ -9,7 +9,6 @@ const ManageProduct = () => {
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
-    console.log(parts);
     return (
         <div>
             <h1>ManageProduct</h1>
@@ -25,7 +24,7 @@ const ManageProduct = () => {
                 </thead>
                 <tbody>
                     {
-                        parts.map((parts,i) => <SingleParts i={i} key={parts._id} parts={parts}></SingleParts>)
+                        parts.map((parts, i) => <SingleParts i={i} key={parts._id} parts={parts}></SingleParts>)
                     }
                 </tbody>
             </Table>

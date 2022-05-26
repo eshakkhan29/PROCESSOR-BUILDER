@@ -18,6 +18,7 @@ import AddProduct from './components/Dashboard/AddProduct';
 import ManageProduct from './components/Dashboard/ManageProduct';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
 import Payment from './components/Dashboard/Payment';
+import RequireAdmin from './components/RequireAdmin/RequareAdmin';
 
 function App() {
   return (
@@ -41,7 +42,11 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/addreview' element={<AddAReview></AddAReview>}></Route>
           <Route path='/dashboard/profile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='/dashboard/manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='/dashboard/manageallorders' element={
+            <RequireAdmin>
+              <ManageAllOrders></ManageAllOrders>
+            </RequireAdmin>
+          }></Route>
           <Route path='/dashboard/addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='/dashboard/makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='/dashboard/manageproduct' element={<ManageProduct></ManageProduct>}></Route>

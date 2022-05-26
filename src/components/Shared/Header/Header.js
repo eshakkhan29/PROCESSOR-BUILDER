@@ -1,5 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
+import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
@@ -9,10 +10,9 @@ const Header = () => {
     const [user] = useAuthState(auth);
 
     return (
-        <div>
-            <Navbar expand="lg" bg="primary" variant="dark">
+        <Navbar expand="lg" sticky='top' className='navigation-bar shadow-sm' variant="light">
                 <Container>
-                    <Navbar.Brand as={Link} to='/'>Processor Builder</Navbar.Brand>
+                    <Navbar.Brand className='text-primary text-uppercase fs-4 fw-bold' as={Link} to='/'>Processor Builder</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
@@ -23,14 +23,13 @@ const Header = () => {
                                 :
                                 <>
                                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-                                    <button onClick={() => signOut(auth)} className='btn btn-danger'>Log out</button>
+                                    <button onClick={() => signOut(auth)} className='btn btn-sm btn-danger'>Log out</button>
                                 </>
                             }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
     );
 };
 

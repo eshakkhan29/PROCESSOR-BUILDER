@@ -4,7 +4,7 @@ const Review = ({ review }) => {
     const { name, rating, body } = review;
     return (
         <div className='col-lg-4 col-12'>
-            <div className="card border-0 shadow">
+            <div className="card border-0 shadow-sm">
                 <div className="card-body">
                     <p className=' text-secondary'>{body}</p>
                     <p>Rating <b className='text-warning'>{rating} Starts</b></p>

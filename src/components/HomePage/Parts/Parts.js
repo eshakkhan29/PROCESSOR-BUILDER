@@ -13,7 +13,7 @@ const Parts = () => {
             <h1 className='text-center text-primary my-4'>Our Products</h1>
             <div className="row g-3">
                 {
-                    parts.map((p, index) => <PartsDetails key={index} parts={p}></PartsDetails>)
+                    [...parts].reverse().map((p, index) => <PartsDetails key={index} parts={p}></PartsDetails>)
                 }
             </div>
         </section>

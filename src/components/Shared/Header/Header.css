@@ -1,0 +1,14 @@
+.navigation-bar {
+    background: #ececec;
+}
+
+.nav-link {
+    color: #157347 !important;
+    padding: 10px !important;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}

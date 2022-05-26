@@ -6,7 +6,9 @@ const useProfileInfo = (email) => {
     useEffect(() => {
         fetch(`http://localhost:5000/users?email=${email}`)
             .then(res => res.json())
-            .then(data => setUserInfo(data))
+            .then(data => {
+                setUserInfo(data)
+            })
     }, [email, refetch])
     return [userInfo, refetch, setRefetch, setUserInfo];
 };

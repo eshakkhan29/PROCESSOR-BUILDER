@@ -1,0 +1,15 @@
+.banner-section{
+    background-color: #efefef;
+}
+.heading-title {
+    font-size: 50px;
+}
+.banner{
+    border-radius: 30px;
+}
+
+@media (max-width: 565px) {
+    .heading-title {
+        font-size: 25px;
+    }
+}
