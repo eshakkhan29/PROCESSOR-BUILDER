@@ -8,7 +8,9 @@ const PartsDetails = ({ parts }) => {
     return (
         <div className='col-lg-4 col-12'>
             <div className='card border-bottom-0 parts-info'>
-                <img src={img} alt="" />
+                <div className='p-3'>
+                    <img className='img-fluid' src={img} alt="" />
+                </div>
                 <div className="card-body">
                     <h4 className='card-title'>{name}</h4>
                     <h6 className='text-secondary'>Price: <b>BDT {price}</b></h6>

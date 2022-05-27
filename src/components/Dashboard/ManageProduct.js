@@ -4,11 +4,12 @@ import SingleParts from './SingleParts';
 
 const ManageProduct = () => {
     const [parts, setParts] = useState([]);
+    const [refetch, setRefetch] = useState(false);
     useEffect(() => {
         fetch('https://desolate-sands-37810.herokuapp.com/parts')
             .then(res => res.json())
             .then(data => setParts(data))
-    }, [])
+    }, [refetch])
     return (
         <div>
             <h1>ManageProduct</h1>
@@ -24,7 +25,7 @@ const ManageProduct = () => {
                 </thead>
                 <tbody>
                     {
-                        parts.map((parts, i) => <SingleParts i={i} key={parts._id} parts={parts}></SingleParts>)
+                        parts.map((parts, i) => <SingleParts i={i} refetch={refetch} setRefetch={setRefetch} key={parts._id} parts={parts}></SingleParts>)
                     }
                 </tbody>
             </Table>
