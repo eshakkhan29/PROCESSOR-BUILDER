@@ -1,0 +1,20 @@
+ul {
+    padding: 0 !important;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+ul li {
+    color: #157347;
+    font-weight: 500;
+}
+ul li a {
+    text-decoration: none;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    display: inline-block;
+    color: #157347;
+    font-weight: 500;
+}

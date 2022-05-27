@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [refetch, setRefetch] = useState(false);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${email}`)
+        fetch(`https://desolate-sands-37810.herokuapp.com/orders?email=${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [email, refetch])

@@ -5,7 +5,7 @@ import SingleParts from './SingleParts';
 const ManageProduct = () => {
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/parts')
+        fetch('https://desolate-sands-37810.herokuapp.com/parts')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

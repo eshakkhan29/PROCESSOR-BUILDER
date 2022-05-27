@@ -4,7 +4,7 @@ import SingleOrder from './SingleOrder';
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/allorders")
+        fetch("https://desolate-sands-37810.herokuapp.com/allorders")
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])

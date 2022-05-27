@@ -8,7 +8,7 @@ const useUserToken = (user) => {
         const newUserData = { displayName: name, email: email }
         const getToken = async () => {
             if (user) {
-                fetch(`http://localhost:5000/login`, {
+                fetch(`https://desolate-sands-37810.herokuapp.com/login`, {
                     method: "PUT",
                     headers: {
                         'content-type': 'application/json'

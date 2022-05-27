@@ -8,7 +8,7 @@ const User = ({ user, index }) => {
         const role = 'admin';
         const userData = { email, role };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://desolate-sands-37810.herokuapp.com/users", {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

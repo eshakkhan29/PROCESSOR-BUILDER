@@ -25,7 +25,7 @@ const AddProduct = () => {
         const img = imgUlrRef.current.value;
         const product = { name, img, description, minimumOrder, quantity, price };
 
-        await axios.post('http://localhost:5000/addproduct', product)
+        await axios.post('https://desolate-sands-37810.herokuapp.com/addproduct', product)
             .then(function (response) {
                 if (response.data.acknowledged === true) {
                     toast.success('Your product added successfully')

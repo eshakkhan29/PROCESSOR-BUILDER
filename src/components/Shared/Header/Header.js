@@ -24,6 +24,7 @@ const Header = () => {
                                 <>
                                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                                     <button onClick={() => signOut(auth)} className='btn btn-sm btn-danger'>Log out</button>
+                                    <Nav.Link as={Link} to="#">{user?.displayName}</Nav.Link>
                                 </>
                             }
                         </Nav>

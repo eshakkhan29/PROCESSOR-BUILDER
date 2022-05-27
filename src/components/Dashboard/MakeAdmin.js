@@ -5,7 +5,7 @@ import User from './User';
 const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allusers')
+        fetch('https://desolate-sands-37810.herokuapp.com/allusers')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

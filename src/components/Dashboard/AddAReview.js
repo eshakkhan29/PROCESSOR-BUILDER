@@ -12,7 +12,7 @@ const AddAReview = () => {
         const rating = event.target.rating.value;
         const reviewData = { name, body, rating }
         console.log(reviewData);
-        fetch('http://localhost:5000/review', {
+        fetch('https://desolate-sands-37810.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

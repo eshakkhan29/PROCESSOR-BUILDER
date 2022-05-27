@@ -7,7 +7,7 @@ const Order = ({ order, setRefetch, refetch }) => {
     const navigate = useNavigate();
 
     const handelCancel = () => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://desolate-sands-37810.herokuapp.com/orders/${_id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
