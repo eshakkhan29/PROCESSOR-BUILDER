@@ -25,7 +25,7 @@ const AddAReview = () => {
     }
     return (
         <div>
-            <h1 className=' text-success'>Add a Review</h1>
+            <h1 className='my-3'>Add A <span className='text-success'>Review</span></h1>
             <div>
                 <Form onSubmit={addReview}>
                     <Form.Group className="mb-3" >

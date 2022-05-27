@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Order = ({ order, setRefetch, refetch }) => {
     const { _id, location, displayName, email, phone, name, price, quantity } = order;
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
+
 
     const handelCancel = () => {
+        const handleClose = () => setShow(false);
         fetch(`https://desolate-sands-37810.herokuapp.com/orders/${_id}`, {
             method: "DELETE",
         })
@@ -17,8 +21,10 @@ const Order = ({ order, setRefetch, refetch }) => {
                     toast.error('Your order is canceled')
                 }
             })
+        handleClose();
     }
-
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <div className='col-12 shadow-sm rounded-3 p-3'>
             <div className='d-flex justify-content-between align-items-center'>
@@ -41,10 +47,23 @@ const Order = ({ order, setRefetch, refetch }) => {
                     </div>
                 </div>
                 <div>
-                    <button onClick={handelCancel} className='btn btn-danger me-3'>cancel Order</button>
+                    <button onClick={handleShow} className='btn btn-danger me-3'>cancel Order</button>
                     <button onClick={() => navigate(`/dashboard/payment/${_id}`)} className='btn btn-success'>pay</button>
                 </div>
             </div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Are you sure to cancel this order?</Modal.Title>
+                </Modal.Header>
+                <Modal.Footer className='justify-content-center'>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="danger" onClick={() => handelCancel(_id)}>
+                        Delete
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 };

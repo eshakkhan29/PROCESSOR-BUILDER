@@ -38,9 +38,10 @@ const MyProfile = () => {
             })
         event.target.reset();
     }
+
     return (
         <div>
-            <h1 className='text-success'>My profile</h1>
+            <h1 className='my-2'>My <span className='text-success'>Profile</span></h1>
             <p>Name: {displayName}</p>
             <p>Email: {email}</p>
             <p>Education: {education}</p>

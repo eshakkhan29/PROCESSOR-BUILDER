@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import Loading from '../Shared/Loading/Loading';
 import User from './User';
 
 const MakeAdmin = () => {
@@ -9,10 +10,12 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
-
+    if (users <= 0) {
+        return <Loading></Loading>
+    }
     return (
         <div>
-            <h1>make admin</h1>
+            <h1 className='my-3'>Make <span className='text-success'>Admin</span></h1>
             <Table striped responsive bordered hover>
                 <thead>
                     <tr>

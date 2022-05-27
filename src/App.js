@@ -19,6 +19,7 @@ import ManageProduct from './components/Dashboard/ManageProduct';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
 import Payment from './components/Dashboard/Payment';
 import RequireAdmin from './components/RequireAdmin/RequareAdmin';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/purchase/:id' element={

@@ -14,7 +14,7 @@ const BusinessSummary = () => {
                             <img className='img-fluid rounded-3' src={chicest} alt="" />
                         </div>
                         <div className='ms-3 mb-3 mb-lg-0'>
-                            <h1 className='my-4'>About Our Company</h1>
+                            <h1 className='my-4'>About Our <span className='text-primary'>Company</span></h1>
                             <p>Intel Corporation announced plans to further reduce its direct and indirect greenhouse gas emissions and develop more sustainable technology solutions. The company pledged to achieve net-zero greenhouse gas emissions in its global operations by 2040, to increase the energy efficiency and lower the carbon footprint of Intel products and platforms with specific goals, and to work with customers and industry partners to create solutions that lower the greenhouse gas footprint of the entire technology ecosystem.</p>
                             <button className='btn btn-primary'>Know More About</button>
                         </div>
@@ -37,7 +37,7 @@ const BusinessSummary = () => {
                             <div className='my-3 my-lg-0'>
                                 <h1 className='text-white'><FaUserClock /></h1>
                                 <h1 className='text-white'>
-                                    <CountUp 
+                                    <CountUp
                                         end={1250}
                                         duration={3}
                                     />+</h1>

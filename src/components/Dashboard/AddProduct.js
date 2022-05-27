@@ -38,7 +38,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h2 className='text-success'>Add New Product</h2>
+            <h2 className='my-3'>Add New <span className='text-success'>Product</span></h2>
             <div className='addProduct mx-auto'>
                 <Form onSubmit={handelAddProduct}>
                     <Form.Group className="mb-3" >

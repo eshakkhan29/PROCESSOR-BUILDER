@@ -11,7 +11,7 @@ const Reviews = () => {
     return (
         <section className='banner-section py-5'>
             <div className="container">
-            <h1 className='text-center text-primary my-4'>Reviews</h1>
+            <h1 className='text-center my-4'>Client <span className='text-primary'>Reviews</span></h1>
             <div className='row g-4 py-5'>
                 {
                     reviews.map((review, index) => <Review key={index} review={review} ></Review>)
