@@ -9,10 +9,10 @@ const Reviews = () => {
             .then(data => setReviews(data))
     }, [])
     return (
-        <section className='banner-section py-5 my-5'>
+        <section className='banner-section py-5'>
             <div className="container">
             <h1 className='text-center text-primary my-4'>Reviews</h1>
-            <div className='row g-4'>
+            <div className='row g-4 py-5'>
                 {
                     reviews.map((review, index) => <Review key={index} review={review} ></Review>)
                 }

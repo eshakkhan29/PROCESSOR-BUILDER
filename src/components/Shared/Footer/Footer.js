@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer-bg pt-5 pb-3'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 col-sm-6 col-4">
@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p className='text-center pt-2 text-secondary'> &copy; All Right reserved from || PROCESSOR BUILDER {new Date().getUTCFullYear()}</p>
+                <p className='text-center m-0 pt-2 text-secondary'> &copy; All Right reserved from || PROCESSOR BUILDER {new Date().getUTCFullYear()}</p>
             </div>
         </footer>
     );
