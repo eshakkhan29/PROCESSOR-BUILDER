@@ -1,5 +1,5 @@
 import React from 'react';
-import chicest from '../../../image/chipsetMaking.png';
+import chipset from '../../../image/chipsetMaking.png';
 import './BusinessSummary.css';
 import { FaFlag, FaUserClock, FaStreetView, FaIndustry } from "react-icons/fa";
 import CountUp from 'react-countup';
@@ -11,7 +11,7 @@ const BusinessSummary = () => {
                 <div className="container">
                     <div className='d-flex py-5 justify-content-between align-items-center flex-lg-row flex-column-reverse'>
                         <div>
-                            <img className='img-fluid rounded-3' src={chicest} alt="" />
+                            <img className='img-fluid rounded-3' src={chipset} alt="" />
                         </div>
                         <div className='ms-3 mb-3 mb-lg-0'>
                             <h1 className='my-4'>About Our <span className='text-primary'>Company</span></h1>

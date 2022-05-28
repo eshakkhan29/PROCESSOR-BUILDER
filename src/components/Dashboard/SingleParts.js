@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { toast } from 'react-toastify';
+import { MdDelete } from "react-icons/md";
 
 const SingleParts = ({ parts, i, refetch, setRefetch }) => {
     const [show, setShow] = useState(false);
@@ -34,7 +35,7 @@ const SingleParts = ({ parts, i, refetch, setRefetch }) => {
                 <td>{parts?.quantity}</td>
                 <td>
                     <div className='d-flex justify-content-around align-items-center'>
-                        <button onClick={handleShow} className=' btn btn-sm btn-danger'>Delete</button>
+                        <button onClick={handleShow} className=' btn btn-sm btn-danger'><MdDelete className='me-2' /> Delete</button>
                     </div>
                 </td>
             </tr>
@@ -44,10 +45,10 @@ const SingleParts = ({ parts, i, refetch, setRefetch }) => {
                 </Modal.Header>
                 <Modal.Footer className='justify-content-center'>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        No
                     </Button>
                     <Button variant="danger" onClick={() => handelDelete(_id)}>
-                        Delete
+                        Yes
                     </Button>
                 </Modal.Footer>
             </Modal>

@@ -1,6 +1,8 @@
 import React from 'react';
 import './Parts.css';
 import { useNavigate } from 'react-router-dom';
+import { FaCartPlus } from "react-icons/fa";
+
 
 const PartsDetails = ({ parts }) => {
     const { _id, name, img, description, minimumOrder, quantity, price } = parts;
@@ -20,7 +22,7 @@ const PartsDetails = ({ parts }) => {
                         <p>minimum order: <span>{minimumOrder}</span></p>
                     </div>
                 </div>
-                <button onClick={() => navigate(`/purchase/${_id}`)} className='btn btn-success position-absolute bottom-0 start-50 translate-middle-x w-100'>Purchase</button>
+                <button onClick={() => navigate(`/purchase/${_id}`)} className='btn btn-success position-absolute bottom-0 start-50 translate-middle-x w-100'><FaCartPlus className='me-3'/> Purchase</button>
             </div>
         </div>
     );

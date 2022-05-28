@@ -3,6 +3,8 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import { MdAdd } from "react-icons/md";
+
 import auth from '../../firebase.init';
 
 const AddProduct = () => {
@@ -72,7 +74,7 @@ const AddProduct = () => {
                     </Form.Group>
 
                     <Button className='w-100' variant="primary" type="submit">
-                        Add
+                        <MdAdd className='me-2'/> Add
                     </Button>
 
                 </Form>

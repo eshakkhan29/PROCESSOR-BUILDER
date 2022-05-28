@@ -6,9 +6,6 @@ const Loading = () => {
         <div className='body'>
             <div className="loader"></div>
         </div>
-        // <div>
-        //     <h1>Loading...</h1>
-        // </div>
     );
 };
 

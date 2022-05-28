@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { GiCancel } from "react-icons/gi";
+import { BsFillCreditCard2BackFill } from "react-icons/bs";
+
 
 const Order = ({ order, setRefetch, refetch }) => {
     const { _id, location, displayName, email, phone, name, price, quantity } = order;
@@ -47,8 +50,8 @@ const Order = ({ order, setRefetch, refetch }) => {
                     </div>
                 </div>
                 <div>
-                    <button onClick={handleShow} className='btn btn-danger me-3'>cancel Order</button>
-                    <button onClick={() => navigate(`/dashboard/payment/${_id}`)} className='btn btn-success'>pay</button>
+                    <button onClick={handleShow} className='btn btn-danger me-3'><GiCancel className='me-2' /> cancel Order</button>
+                    <button onClick={() => navigate(`/dashboard/payment/${_id}`)} className='btn btn-success'><BsFillCreditCard2BackFill className='me-2'/> pay</button>
                 </div>
             </div>
             <Modal show={show} onHide={handleClose}>
@@ -57,10 +60,10 @@ const Order = ({ order, setRefetch, refetch }) => {
                 </Modal.Header>
                 <Modal.Footer className='justify-content-center'>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        no
                     </Button>
                     <Button variant="danger" onClick={() => handelCancel(_id)}>
-                        Delete
+                        yes
                     </Button>
                 </Modal.Footer>
             </Modal>

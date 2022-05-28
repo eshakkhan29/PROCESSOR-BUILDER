@@ -4,6 +4,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useProfileInfo from '../hook/useProfileInfo';
+import { MdSystemUpdateAlt } from "react-icons/md";
+import { FaSave } from "react-icons/fa";
+
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
@@ -50,7 +53,7 @@ const MyProfile = () => {
             <p>Facebook Link: {fblink}</p>
             <p>linkedin Link: {linkedin}</p>
 
-            <button className='btn btn-primary' onClick={() => setOpen(true)}>Update Profile</button>
+            <button className='btn btn-primary' onClick={() => setOpen(true)}><MdSystemUpdateAlt className='me-2' /> Update Profile</button>
             <div>
                 {open &&
                     <>
@@ -78,7 +81,7 @@ const MyProfile = () => {
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
-                                Save
+                                <FaSave className='me-2'/> Save
                             </Button>
                         </Form>
                     </>

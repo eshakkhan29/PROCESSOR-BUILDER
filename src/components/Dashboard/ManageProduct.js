@@ -11,7 +11,7 @@ const ManageProduct = () => {
             .then(res => res.json())
             .then(data => setParts(data))
     }, [refetch]);
-    
+
     if (parts <= 0) {
         return <Loading></Loading>
     }
