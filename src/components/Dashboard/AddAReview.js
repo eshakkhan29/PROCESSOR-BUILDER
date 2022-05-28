@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddAReview = () => {
@@ -10,8 +11,10 @@ const AddAReview = () => {
         const name = user?.displayName;
         const body = event.target.review.value;
         const rating = event.target.rating.value;
+        if (rating <= 0 || rating > 5) {
+            return toast.error('your rating value must be 1 to 5')
+        }
         const reviewData = { name, body, rating }
-        console.log(reviewData);
         fetch('https://desolate-sands-37810.herokuapp.com/review', {
             method: "POST",
             headers: {
@@ -30,13 +33,13 @@ const AddAReview = () => {
                 <Form onSubmit={addReview}>
                     <Form.Group className="mb-3" >
                         <Form.Label>Your Review</Form.Label>
-                        <Form.Control name='review' as='textarea' type="text" placeholder="say something about this company" />
+                        <Form.Control required name='review' as='textarea' type="text" placeholder="say something about this company" />
 
                     </Form.Group>
 
                     <Form.Group className="mb-3" >
                         <Form.Label>Rating</Form.Label>
-                        <Form.Control name='rating' type="number" placeholder="rating" />
+                        <Form.Control required name='rating' type="text" placeholder="rating" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">

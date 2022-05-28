@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import Order from './Order';
 
 const MyOrders = () => {
@@ -13,6 +14,9 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [email, refetch])
+    if (orders.length <= 0) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h2 className='my-4'>Your Order <span className='text-success'>Summary</span></h2>

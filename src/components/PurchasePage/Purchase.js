@@ -100,7 +100,7 @@ const Purchase = () => {
                     <Form onSubmit={handelSubmit}>
                         <Form.Group className="mb-3">
                             <Form.Label>Quantity</Form.Label>
-                            <Form.Control onChange={handelQuantity} name='quantity' type="text" placeholder="Quantity" />
+                            <Form.Control onChange={handelQuantity} name='quantity' type="number" placeholder="Quantity" />
                             {
                                 error && <p className='text-danger'>{error}</p>
                             }
