@@ -20,6 +20,7 @@ import MakeAdmin from './components/Dashboard/MakeAdmin';
 import Payment from './components/Dashboard/Payment';
 import RequireAdmin from './components/RequireAdmin/RequareAdmin';
 import Blogs from './components/Blogs/Blogs';
+import ErrorPage from './components/Shared/404Page/ErrorPage';
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path='/dashboard/manageproduct' element={<ManageProduct></ManageProduct>}></Route>
           <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
         </Route>
+        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
