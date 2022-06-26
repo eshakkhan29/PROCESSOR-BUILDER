@@ -3,6 +3,10 @@
 
 # PROCESSOR BUILDER server tide code link [SERVER CODE LINK](https://github.com/eshakkhan29/PROCESSOR-BUILDER-SERVER).
 
+### Admin info
+- Email: admin@admin.com
+- Password: password
+
 ## feature in this project
 - A nice processor buying website. Registered users can order Processor and manage them.
 - Established Admin and User-based separate dashboard. An admin can manage all the user's order also can add or remove a product.
